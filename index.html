@@ -40,13 +40,9 @@
 <body>
     <h1>Hello, Vue :)</h1>
     <div id="app">
-        <!-- attribute binding -->
-        <a v-bind:href="url">best website ever</a>
-        <br>
-        <a :href="url">best website ever</a> <!-- shortcut for attribute binding -->
         <div v-if="showBooks">
             <ul>
-                <li v-for="(book, index) in books" :class="{ fav: book.isFav }" @click="toggleFav(index)">
+                <li v-for="(book, index) in filteredBooks" :class="{ fav: book.isFav }" @click="toggleFav(index)">
                     <img :src="book.img" :alt="book.title">
                     <h3>{{book.title}}</h3>
                     <p>{{book.author}}</p>
