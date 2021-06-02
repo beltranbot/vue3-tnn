@@ -21,20 +21,17 @@
     <h1>Hello, Vue :)</h1>
     <div id="app">
         <div v-if="showBooks">
-            <p>{{ title }} - {{ author }} - {{ age }}</p>
+            <ul>
+                <li v-for="book in books">
+                    <h3>{{book.title}}</h3>
+                    <p>book.author</p>
+                </li>
+            </ul>
         </div>
         <button @click="toggleShowBooks()">
             <span v-if="showBooks">Hide books</span>
             <span v-else>Show books</span>
         </button>
-
-        <br>
-
-        <!-- mouse events -->
-        <div class="box" @mouseover="mouseEnterEvent($event, 5)">mouseover (enter)</div> <!-- pass extra arguments to event handler-->
-        <div class="box" @mouseleave="mouseLeaveEvent">mouseleave</div> <!-- without parameters, the event value will be passed as default -->
-        <div class="box" @dblclick="doubleClickEvent">double click</div>
-        <div class="box" @mousemove="handleMouseMove">position - {{x}} {{y}}</div>
     </div>
 
     <script src="app.js"></script>
