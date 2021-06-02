@@ -30,6 +30,7 @@ const app = Vue.createApp({
             this.showBooks = !this.showBooks;
         },
         toggleFav(index) {
+            // here we can also pass the book directly
             this.books[index].isFav = !this.books[index].isFav
         }
     }
