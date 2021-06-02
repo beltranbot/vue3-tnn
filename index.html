@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning vue</title>
     <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        .box {
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello, Vue :)</h1>
@@ -18,8 +28,13 @@
             <span v-else>Show books</span>
         </button>
 
-        <div v-show="showBooks">Currently showing books</div>
-        <!-- v-show only hides elements from the view, v-if removes it completely-->
+        <br>
+
+        <!-- mouse events -->
+        <div class="box" @mouseover="mouseEnterEvent($event, 5)">mouseover (enter)</div> <!-- pass extra arguments to event handler-->
+        <div class="box" @mouseleave="mouseLeaveEvent">mouseleave</div> <!-- without parameters, the event value will be passed as default -->
+        <div class="box" @dblclick="doubleClickEvent">double click</div>
+        <div class="box" @mousemove="handleMouseMove">position - {{x}} {{y}}</div>
     </div>
 
     <script src="app.js"></script>
